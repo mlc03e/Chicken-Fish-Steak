@@ -17,9 +17,11 @@ ActiveRecord::Schema.define(version: 2019_02_20_162013) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "guest_id"
+    t.bigint "commentable_id"
+    t.string "commentable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "creators", force: :cascade do |t|
@@ -38,9 +40,11 @@ ActiveRecord::Schema.define(version: 2019_02_20_162013) do
 
   create_table "photos", force: :cascade do |t|
     t.string "image"
-    t.integer "guest_id"
+    t.bigint "imageable_id"
+    t.string "imageable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable_type_and_imageable_id"
   end
 
   create_table "receptions", force: :cascade do |t|
