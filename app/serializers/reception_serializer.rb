@@ -3,5 +3,5 @@ class ReceptionSerializer < ActiveModel::Serializer
   has_many :guests
   has_many :photos, through: :guests
   has_many :comments, through: :guests
-  attributes :id, :name, :date
+  attributes :name, :date, :creator_id
 end
