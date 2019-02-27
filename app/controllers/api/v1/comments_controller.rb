@@ -11,10 +11,10 @@ class Api::V1::CommentsController < ApplicationController
     render json: @comment, status: :ok
   end
 
-  def new
-    @comment = Comment.new
-    render json: @comment, status: :ok
-  end
+  # def new
+  #   @comment = Comment.new
+  #   render json: @comment, status: :ok
+  # end
 
   def create
     @comment = Comment.create(comment_params)
@@ -29,7 +29,7 @@ class Api::V1::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :commentable_id, :commentable_type)
+    params.require(:comment).permit(:content, :commentable_id, :commentable_type, :reception_id)
 
   end
 
