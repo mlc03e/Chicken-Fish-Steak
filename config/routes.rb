@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resources :guests
       resources :photos
       resources :comments
+
+      post "creators/login", to: "creators#login"
+      post "guests/login", to: "guests#login"
     end
   end
 end
