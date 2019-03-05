@@ -26,10 +26,23 @@ class Api::V1::GuestsController < ApplicationController
     @guest = Guest.find(params[:id])
   end
 
+  def login
+   @guest = Guest.all.find_by(name: params[:name])
+   if @guest.nil?
+     render json: { error: "Guest not found" }, status: :error
+   else
+     if @guest.password==(params[:password])
+       render json: @guest
+     else
+       render json: { error: "Incorrect password" }, status: :error
+     end
+   end
+ end
+
   private
 
   def guest_params
-    params.require(:guest).permit(:id, :name, :rsvp, :reception_id)
+    params.require(:guest).permit(:name, :rsvp, :reception_id, :password, :email)
   end
 
 

@@ -11,16 +11,16 @@ class Api::V1::PhotosController < ApplicationController
     render json: @photo, status: :ok
   end
 
-  def new
-    @photo = Photo.new
-    render json: @photo, status: :ok
-  end
+  # def new
+  #   @photo = Photo.new
+  #   render json: @photo, status: :ok
+  # end
 
   def create
     @photo = Photo.create(photo_params)
     render json: @photo, status: :ok
   end
-
+  
   def destroy
     @photo.delete
     @photo = Photo.find(params[:id])
@@ -29,8 +29,7 @@ class Api::V1::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:id, :guest_id, :image)
+    params.require(:photo).permit(:image, :imageable_id, :imageable_type, :reception_id )
   end
-
 
 end

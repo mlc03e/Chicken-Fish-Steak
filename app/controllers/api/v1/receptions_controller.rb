@@ -5,19 +5,19 @@ class Api::V1::ReceptionsController < ApplicationController
     render json: @receptions
   end
 
-
   def show
     @reception = Reception.find(params[:id])
     render json: @reception, status: :ok
   end
 
-  def new
-    @reception = Reception.new
-    render json: @reception, status: :ok
-  end
+  # def new
+  #   @reception = Reception.new
+  #   render json: @reception, status: :ok
+  # end
 
   def create
     @reception = Reception.create(reception_params)
+    # byebug
     render json: @reception, status: :ok
   end
 
@@ -29,7 +29,8 @@ class Api::V1::ReceptionsController < ApplicationController
   private
 
   def reception_params
-    params.require(:reception).permit(:id, :name, :rdate, :creator_id)
+    # byebug
+    params.require(:reception).permit(:name, :date, :creator_id)
   end
 
 end
