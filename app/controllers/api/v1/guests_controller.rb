@@ -38,11 +38,11 @@ class Api::V1::GuestsController < ApplicationController
      end
    end
  end
- 
+
   private
 
   def guest_params
-    params.require(:guest).permit(:id, :name, :rsvp, :reception_id)
+    params.require(:guest).permit(:name, :rsvp, :reception_id, :password, :email)
   end
 
 
