@@ -10,10 +10,14 @@ class Api::V1::ReceptionsController < ApplicationController
     render json: @reception, status: :ok
   end
 
-  # def new
-  #   @reception = Reception.new
-  #   render json: @reception, status: :ok
-  # end
+  def newguest
+    @guest = Guest.new(name: params[:name], rsvp: params[:rsvp], reception_id: params[:reception_id],password: params[:password],email: params[:email])
+    @reception= Reception.find(params[:reception_id])
+    @reception.guests<<@guest
+    @guest.save
+    # byebug
+    render json: @guest, status: :ok
+  end
 
   def create
     @reception = Reception.create(reception_params)
