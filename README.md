@@ -12,3 +12,4 @@
 <li>rails s</li>
 
 <h2> Demo </h2>
+<a href="https://youtu.be/aZose6y6Ltw">View</a>
