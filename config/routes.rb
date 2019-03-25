@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
       post "creators/login", to: "creators#login"
       post "guests/login", to: "guests#login"
+      post "receptions/:id/newguest", to: "receptions#newguest"
     end
   end
 end
