@@ -5,4 +5,8 @@ class CommentSerializer < ActiveModel::Serializer
   def guest_name
     Guest.find(object.commentable_id).name
   end
+
+  # def creator_name
+  #   Creator.find(object.id).name
+  # end
 end
