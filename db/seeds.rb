@@ -7,10 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+<<<<<<< HEAD
+  Creator.create(name:"Meghan", password:'123')
+  Creator.create(name:"Esther")
+  Creator.create(name:"Adam")
+  Creator.create(name:"Gavin")
+=======
   Creator.create(name:"Meghan", password: '123')
   Creator.create(name:"Esther", password: '123')
   Creator.create(name:"Adam", password: '123')
   Creator.create(name:"Gavin", password: '123')
+>>>>>>> 0ea6b9b7beff2061258ed072c26c8f24d5727e6c
 
   Reception.create(name:"Meghan's Wedding", date:"October 15, 2019", creator_id: 1)
   Reception.create(name:"Esther's Wedding", date:"November 1, 2019", creator_id: 2)

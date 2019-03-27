@@ -6,6 +6,4 @@ class PhotoSerializer < ActiveModel::Serializer
   def guest_name
     Guest.find(object.imageable_id).name
   end
-
-  
 end
