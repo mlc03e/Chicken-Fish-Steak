@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-  Creator.create(name:"Meghan")
+  Creator.create(name:"Meghan", password:'123')
   Creator.create(name:"Esther")
   Creator.create(name:"Adam")
   Creator.create(name:"Gavin")
